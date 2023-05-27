@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/track2"
+        android:paddingVertical="10dp"
+        android:text="Tangala Notif Push"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/gif"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nbimages"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchcompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listener is  "
+        android:textColor="@color/transparent"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:textSize="18dp"
+        android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gif"
+        app:layout_constraintTop_toTopOf="@+id/linear"
+        app:showText="true"
+        android:focusable="true"
+        android:clickable="true"
+        app:track="@drawable/track" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gif"
+        tools:context=".MainActivity">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="5dp"
+            android:visibility="visible"
+            app:cardCornerRadius="20dp"
+            android:layout_marginVertical="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="2dp">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/custom_radio_selector"
+                    android:button="@color/transparent"
+                    android:drawableLeft="@drawable/twitter"
+                    android:drawablePadding="10dp"
+                    android:text="Twitter"
+                    android:textAlignment="textEnd"
+
+                    android:textColor="@drawable/custom_radio_text"
+                    android:textSize="16dp"
+                    tools:context=".MainActivity"/>
+
+
+            </RadioGroup>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginVertical="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/copyright"
+        android:layout_marginRight="20dp">
+<include
+    android:id="@+id/button_setting"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    layout="@layout/button_layout"
+    />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp"
+        android:text="© Tangala Technology "
+        android:textColor="#4B000000"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
